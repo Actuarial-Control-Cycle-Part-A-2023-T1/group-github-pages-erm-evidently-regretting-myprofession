@@ -67,13 +67,49 @@ More information on GitHub Pages can be found [here](https://pages.github.com/)
 
 
 # 5. Risk and Risk Mitigation Considerations
+![Risk Assessment Chart](https://user-images.githubusercontent.com/129591024/229504622-ee4688a0-3013-4579-a6e7-c919d0c57c4a.png)
+Refer to [Risk Register.pdf](https://github.com/Actuarial-Control-Cycle-Part-A-2023-T1/group-github-pages-erm-evidently-regretting-myprofession/files/11138147/Risk.Register.pdf) for comprehensive risk categorization.  
+## __5.1 Key risks__  
+###  __5.1.1 Model Risk__  
+The model parameters are built on historical trends. A deviation in the assumed relocation acceptance rate will affect the short and long-term costs of the policy.  
+* __5.1.1.1 Analysis__  
+The sensitivity of the model to a change in assumptions was performed by adjusting the relocation acceptance rates and performing 100 simulations under the Very High Emissions scenario.  
 
-* 5.1 Key risks
+Sensitivity Scenario | Impact
+-----|------
+-1% initial relocation acceptance rate | Short term costs: -10 billion dollars<br/>Long term costs: +30 billion dollars |
++1% initial relocation acceptance rate | Short term costs: +10 billion dollars<br/>Long term costs: -30 billion dollars | 
 
-* 5.2 Economic Cost Reduction Certainty
+![Sensitivity Analysis on Projected Costs under VH Scenario](https://user-images.githubusercontent.com/129591024/229513802-5e0bcde6-f5b2-4a92-ac1f-374219b01c68.png)
+>TO DO, add Excel + R code
+* __5.1.1.2 Mitigation__  
+Careful monitoring of the actual vs expected costs year on year will allow the team to adjust the model parameters to better reflect the relocation appetite of Storslysian residents.  
 
-* 5.3 Program GDP Constraint Certainty
+###  __5.1.2 Public Backlash__  
+Residents living in high-risk areas can view the policy as a forceful method to evict homeowners. Additionally, residents and politicians may lobby against the policy as they may advocate against taxpayer-funded social insurance programs. This can cause the implementation of the scheme to be negatively impacted if it faces resistance from the population of Storslysia.  
+* __5.1.2.1 Analysis__  
+Public backlash can lead to lower relocation acceptance rates and funding difficulties. We deemed the likelihood of this risk to be relatively high with the impact to be middling. 
+* __5.1.2.2 Mitigation__  
+Public education on the policy and its key benefits and risks to better inform the public of the benefits of relocation. Consistent promotion of the policy through multiple mediums of communication will increase exposure and awareness of the scheme.  
 
+
+###  __5.1.3 Extreme Climate Change__  
+The frequency and severity of natural disasters are greatly impacted by climate change. This, in turn, can exacerbate the damages and costs incurred by the government.  
+In the event of extreme climate change, the sustained costs can be extremely high and possibly un-operable.  
+* __5.1.3.1 Analysis__  
+The model looks at cost projections for four emission scenarios. The Very High emission scenario emphasises uncontrolled climate change growth which would greatly increase the frequency and severity of catastrophic events. (Refer to Figure 5.4). This scenario would result in extreme projected losses year on year for Storslysia from 2050 onwards.  
+![Projected costs under different emissions scenarios](https://user-images.githubusercontent.com/129591024/229518402-5b975e91-4821-4c15-8bd8-bb91538fe9b3.png)
+>TO DO, add Excel + R code
+* __5.1.3.2 Mitigation__  
+Increased coverage of the buyback scheme can further mitigate some costs if we foresee uncontrolled progression into a Very High emissions scenario. This risk can be periodically monitored to allow proactive updates to the scheme.  
+
+
+
+## 5.2 Economic Cost Reduction Certainty  
+TO DO
+
+## 5.3 Program GDP Constraint Certainty  
+TO DO
 
 # 6. Data and Data Limitations
 
