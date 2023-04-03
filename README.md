@@ -30,35 +30,43 @@ More information on GitHub Pages can be found [here](https://pages.github.com/)
 ### By ERM Consulting
 
 # 1. Executive Summary
-* Objectives
+## __Objectives__  
+TO DO 
 
-* Recommendations
+## __Recommendations__  
+TO DO 
 
 # 2. Program Design
 
-* 2.1 Claim Requirements
+## __2.1 Claim Requirements__  
+TO DO 
 
-* 2.2 Coverage
+## __2.2 Coverage__  
+TO DO 
 
-* 2.3 Voluntary Relocation Incentives
+## __2.3 Voluntary Relocation Incentives__  
+TO DO 
 
-* 2.4 Quantitative/Qualitative Justification
+## __2.4 Quantitative/Qualitative Justification__  
+TO DO 
 
-* 2.5 Short Term and Long Term Evaulation
+## __2.5 Short Term and Long Term Evaulation__  
+TO DO 
 
-* 2.6 Key Metrics
+## __2.6 Key Metrics__  
+TO DO 
 
 
 # 3. Pricing and Costs
 
-* 3.1 Short Term with Program Economic Costs vs Without Program
-
-* 3.2 Long term with Program Economic Costs vs Without Program
-
-* 3.3 Capital Requirements for Solvency
-
-* 3.4 Contrasting Voluntary vs Emergency Displacement Costs with Program
-
+## __3.1 Short Term with Program Economic Costs vs Without Program__  
+TO DO 
+## __3.2 Long term with Program Economic Costs vs Without Program__  
+TO DO  
+## __3.3 Capital Requirements for Solvency__  
+TO DO 
+## __3.4 Contrasting Voluntary vs Emergency Displacement Costs with Program__  
+TO DO 
 
 # 4. Assumptions
 * 4.1 Key Assumptions
