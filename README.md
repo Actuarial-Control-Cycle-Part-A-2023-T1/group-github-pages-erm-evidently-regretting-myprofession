@@ -123,3 +123,7 @@ TO DO
 
 
 # 7. Bibliography and Appendix
+## Bibliography  
+Sources used to support this case study can be found in [SOA Case Study Bibliography.docx](https://github.com/Actuarial-Control-Cycle-Part-A-2023-T1/group-github-pages-erm-evidently-regretting-myprofession/files/11146209/SOA.Case.Study.Bibliography.docx)
+
+## Appendix  
