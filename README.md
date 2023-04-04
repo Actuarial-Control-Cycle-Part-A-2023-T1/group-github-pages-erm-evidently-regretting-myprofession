@@ -113,7 +113,7 @@ Clearly, voluntary costs are much higher in the short term due to the buyback an
 # 4. Assumptions
 ## __4.1 Key Assumptions__ 
  1 .Economic conditions are stable for 2021 onwards. This includes GDP, costs for temporary relocation and inflation in the labour, house and private rental markets. This is to avoid the uncertainty brought by performing economic forecasts and to reduce the complexity of models.
- 2.	It is assumed that each region is split into city risk areas of: high, medium and low with areas being evenly distributed across the region based on the FEMA risk index map (hazards.fema.gov, n.d.). Refer to Figure 4.1.
+ 2.	It is assumed that each region is split into city risk areas of: high, medium and low with areas being evenly distributed across the region based on the FEMA risk index map (hazards.fema.gov, n.d.). Refer to the following figure.
  
 ![Figure 4 1](https://user-images.githubusercontent.com/107458550/229771640-095c7cc7-788e-427c-ba47-2f2ac3caf4aa.png)
 
