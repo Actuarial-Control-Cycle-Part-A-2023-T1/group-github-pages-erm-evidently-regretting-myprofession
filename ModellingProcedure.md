@@ -45,8 +45,9 @@ $$ {* EquipmentValueProportion} $$
 For temporary housing, the amount of affected houses is first calculated by dividing the total projected property damage in each region by its respective median house price. As it was assumed that if 25% of a house is destroyed on average, then temporary housing is required for its inhabitants, we multiply this figure by 4. We then multiply this by the average number of people per household, the average cost of temporary housing per month and by 3 months as we assume it takes approximately three months to recover.
 
 $$ TemporaryHousingCost = {{TotalProjectedPropertyDamage\over MedianHousePrice} * 4 * AvgPeoplePerHousehold * AverageTempHousingCost * 3} $$
+
 ### __2.2 With the Program__
-The three main costs without program are still present within the program, however the exposure to them is reduced through the buyback and rent subsidy scheme. The owner exposure factors are calculated as the change in the number of owner households from the base case year 2020. Similarly, the renter/owner exposure factors are calculated as the change in the number of owner and renter households from the base case year 2020. These factors multiply the owner-occupied house percentages and owner and renter occupied house percentages respectively to reflect the change in exposure to these risks for individuals who move from a high-risk city to a low-risk city within a region. Additionally, costs are introduced for the buyback and rent subsidy schemes.
+The three main costs without the program are still present within the program, however the exposure to them is reduced through the buyback and rent subsidy scheme. The owner exposure factors are calculated as the change in the number of owner households from the base case year 2020. Similarly, the renter/owner exposure factors are calculated as the change in the number of owner and renter households from the base case year 2020. These factors multiply the owner-occupied house percentages and owner and renter occupied house percentages respectively to reflect the change in exposure to these risks for individuals who move from a high-risk city to a low-risk city within a region. Additionally, costs are introduced for the buyback and rent subsidy schemes.
 
 $$ {EconomicCost_P} = {OwnerOccupiedPropertyDamage * OwnerExposureFactor + Renter/OwnerEquipmentDamage * Rent/OwnerExposureFactor} $$
 
@@ -58,6 +59,6 @@ The buyback cost is calculated as the number of offers sent in each quarter to h
 $$ BuybackCost = {NumberOfBuybackOffers * MedianHousePrice} $$
 
 #### __2.2.2 Rent Subsidy Cost__
-The rent subsidy cost is similarly calculated, however as it is a subsidy for 6 months, only 30% of the rent price is paid and costs occur for the following 2 quarters.
+The rent subsidy cost is similarly calculated, however as it is a subsidy for 6 months, it is multiplied by 0.3 as only 30% of the rent price is paid and costs occur for the quarter in which the offer was accepted as well as the following quarter
 
-$$ RentSubsidyCost = {NumberOfRentOffers * MedianRentPrice} $$
+$$ RentSubsidyCost = {NumberOfRentOffers * MedianRentPrice * 0.3} $$
