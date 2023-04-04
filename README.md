@@ -84,7 +84,7 @@ Key metrics expected to be reported to ensure the objectives of the program are 
 
 
 # 3. Pricing and Costs
-Assessing the pricing and economic costs associated with the scheme is integral to ensuring its success. To achieve this, Storslysias’ economics costs were modelled and projected from the years 2020-2150 for all quarters 1000 times. Refer to [ModellingProcedure.pdf](https://github.com/Actuarial-Control-Cycle-Part-A-2023-T1/group-github-pages-erm-evidently-regretting-myprofession/files/11138147/ModellingProcedure.pdf) for a comprehensive look at the modelling procedure. The averages of these costs were then taken and the following results were produced. All costs are in 2021 figures.
+Assessing the pricing and economic costs associated with the scheme is integral to ensuring its success. To achieve this, Storslysias’ economics costs were modelled and projected from the years 2020-2150 for all quarters 1000 times. Refer to [ModellingProcedure.md](https://github.com/Actuarial-Control-Cycle-Part-A-2023-T1/group-github-pages-erm-evidently-regretting-myprofession/files/11138147/ModellingProcedure.md) for a comprehensive look at the modelling procedure. The averages of these costs were then taken and the following results were produced. All costs are in 2021 figures.
 TODO: Add modelling procedure pdf
 
 ## __3.1 Short Term with Program Economic Costs vs Without Program__  
