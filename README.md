@@ -82,21 +82,87 @@ Key metrics expected to be reported to ensure the objectives of the program are 
 *  	Reporting on a _yearly basis_ over the long term to ensure the costs under the program are less than 10% of Storslysia’s GDP
 *  	Monitoring on a _yearly basis_ over the long term which Shared Socioeconomic Pathway (SSP) the world is trending towards.
 
+# __3. Modelling Procedure__
+## __3.1 Overall Property Damage Cost__
+To model and project the economic costs with and without the policy, the overall damage stemming from catastrophic climate related events must first be projected. This was achieved by first transforming the historical hazard data, calculating expected frequencies, projecting them utilising an SSP projection model, utilising a Compound Poisson model to model frequency and a Gamma GLM model to predict damage costs.
 
-# 3. Pricing and Costs
-Assessing the pricing and economic costs associated with the scheme is integral to ensuring its success. To achieve this, Storslysias’ economics costs were modelled and projected from the years 2020-2150 for all quarters 1000 times. Refer to [ModellingProcedure.md](https://github.com/Actuarial-Control-Cycle-Part-A-2023-T1/group-github-pages-erm-evidently-regretting-myprofession/blob/40651533f904d94cb505c8bf4228e864e078b443/ModellingProcedure.md) for a comprehensive look at the modelling procedure. The averages of these costs were then taken and the following results were produced. All costs are in 2021 figures.
+### __3.1.1 Data Transformation__
+The Historical Storslysia Hazard Events dataset was utilised for both the frequency and damage cost predictions.  Firstly, all zero cost property damage events were filtered out as our scheme only covers monetary damages. All of the single case hazard events were then summarised into “Heat”, “Wind”, “Water”, “Storm” and “Winter”, similar to (Gissing et al., 2020) and (Psu.edu, 2011). Two events did not fit in these categories hence were discarded from analysis.  Further, the property damage costs were adjusted by the real risk-free rate to give us the values in 2021 Pecunias. Each event’s property damage costs, duration, fatalities, and injuries were then clustered into a “Major”, “Medium" and “Minor” severity category utilising Ward's minimum variance method. Clustering the data between 1991-2020 gave the best results, likely due to technological innovations that occurred around that period resulting in less deaths and fatalities compared to earlier years, complicating the clustering process.  The minor category had 1546 hazard events with the average cost of these events being the lowest of the three while having the second highest duration, lowest deaths and second highest injury averages. The major category had 14 events with the highest cost, highest duration and lowest injuries and deaths. This makes sense as evacuations will tend to occur for these events, preventing major loss of life. Medium events had 19 events with the highest average injuries and deaths and shortest average durations.
 
-## __3.1 Short Term with Program Economic Costs vs Without Program__  
+### __3.1.2 Frequency Expectation Projections__
+To calculate the expected frequencies of catastrophic disaster events in 2020 that caused property damage, the historical number of major, medium, and minor events between 1991-2020 were counted for each hazard category, region, and quarter, then annualised. These were then multiplied by a risk amplification factor calculated as the change in atmospheric CO2 in 10-year intervals between 2020-2150 in 4 different SSP scenarios to make a future projection. Four SSP scenarios were assessed, SSP-1-2.6 being a low emission scenario, SSP2-3.4 being a medium emission scenario, SSP3-6.0 being a high emission scenario and SSP5-Baseline being a very high emission scenario. These projections were then linearly interpolated for each year under the assumption that expected frequency is a linear, constantly changing process. This ultimately results in the expected frequencies of categorically different hazard events in each year, quarter, and region for three different severity levels between 2020 and 2150 which caused property damage. Further, it was assumed that within each region, there were high risk cities, medium risk cities and low risk cities. Each city type has a different distribution of disasters based on severity level. These proportions were multiplied onto the expected frequency projections to obtain the expected frequencies in each of these city types additionally.
+
+### __3.1.3 Frequency Simulation__
+A compound Poisson process was chosen to model the frequencies of disaster events for Storslysia. It was chosen due to its simplicity in incorporating the expected projections from the SSP model and its effectiveness in modelling event frequencies.
+
+$$ CompPois(λ_Y) = 	{\Sigma Pois(λ_{HYQRCS})} $$
+
+Here the compound process for any given year is the sum of independent Poisson processes with parameters $λ_{HYQRCS}$ which refers to the previously projected expected frequencies for each categorically different hazard event in each year, quarter, region, and city risk type for three different severity levels.
+
+### __3.1.4 Damage Modelling__
+The Historical Storslysia Hazard Events dataset with positive claims from 1991-2020 was utilised to train and test various models with the logarithmic 2021 adjusted property damage figures as the dependent variable. The models tested include a Gamma generalised linear model, zero adjusted Gamma (ZAGA) and zero adjusted Inverse Gaussian (ZAIG) generalised additive models due to their practicality when modelling claim cost data (Resti, 2013). During testing it was found that including the year as an independent variable resulted in major increases to RMSE measures while only slightly reducing AIC and BIC levels, hence it was excluded. Further, injuries, fatalities and duration were already captured during severity categorization; hence they were not included in the model. Ultimately the dependent variables were the hazard category, quarter, region, and severity level. Of all the models, Gamma had the best AIC of 5573.195 and BIC of 5655.442 while maintaining the lowest RMSE of 49844863.149, hence it was chosen. 
+
+### __3.1.5 Simulating Projected Property Damage from Disasters__
+Projected property damage cost from disasters were simulated by first generating random values utilising the individual components of the compound Poisson frequency model. These values would serve as a single simulation of the frequencies of each categorically different hazard event in each year, quarter, region, and city risk type for three different severity levels. The corresponding costs of each of these disasters would then be calculated by the Gamma damage model and multiplied to obtain a simulation of the total projected property damage from disasters.
+
+## __3.2 Projection of Economic Costs__
+When projecting the economic costs of the catastrophic climate related events in the future, only damages to essential property and equipment were considered, in line with the program. This is to ensure a fair comparison between the economic costs without the program and with the program.
+
+### __3.2.1 Without the Program__
+The three main economic costs without the program are the owner-occupied property damage, renter/owner equipment damage and the temporary housing costs that occur during disaster recovery efforts.
+
+$$ EconomicCost = {OwnerOccupiedPropertyDamage + Renter/OwnerEquipmentDamage + TempHousingCost} $$
+
+#### __3.2.1.1 Owner-occupied Property Damage__
+Owner-occupied property damage is calculated per region by multiplying the total projected property damage from disasters by the owner-occupied house percentage which is assumed to be constant without the program. Further for minor severity events, a uniformly distributed value for a labour surge increase between 0-15% is produced. For medium severity events this surge is between 15-30% and for major severity events between 30-50%. This is as (Team, 2019) suggests that the severity and size of an event directly impacts the probability of a labour surge.
+
+$$ OwnerOccupiedPropertyDamage = {TotalProjectedPropertyDamage * LabourSurgeIncrease * {OwnerOccupiedHouses\over NumberofHouses}} $$
+
+#### __3.2.1.2 Renter/Owner Equipment Damage__
+Renter/Owner Equipment Damage is calculated per region by generating a uniformly distributed value between 45-70% and multiplying this by total projected property damage from disasters. This value is then multiplied by the renter-and-owner-occupied housing percentage to account for its exposure to only renters and owners.
+
+$$ Renter/OwnerOccupiedEquipmentDamage = {TotalProjectedPropertyDamage * {(OwnerOccupiedHouses+RenterOccupiedHouses)\over NumberofHouses}} $$
+
+$$ {* EquipmentValueProportion} $$
+
+#### __3.2.1.3 Temporary Housing Costs__
+For temporary housing, the amount of affected houses is first calculated by dividing the total projected property damage in each region by its respective median house price. As it was assumed that if 25% of a house is destroyed on average, then temporary housing is required for its inhabitants, we multiply this figure by 4. We then multiply this by the average number of people per household, the average cost of temporary housing per month and by 3 months as we assume it takes approximately three months to recover.
+
+$$ TemporaryHousingCost = {{TotalProjectedPropertyDamage\over MedianHousePrice} * 4 * AvgPeoplePerHousehold * AverageTempHousingCost * 3} $$
+
+### __3.2.2 With the Program__
+The three main costs without the program are still present within the program, however the exposure to them is reduced through the buyback and rent subsidy scheme. The owner exposure factors are calculated as the change in the number of owner households from the base case year 2020. Similarly, the renter/owner exposure factors are calculated as the change in the number of owner and renter households from the base case year 2020. These factors multiply the owner-occupied house percentages and owner and renter occupied house percentages respectively to reflect the change in exposure to these risks for individuals who move from a high-risk city to a low-risk city within a region. Additionally, costs are introduced for the buyback and rent subsidy schemes.
+
+$$ {EconomicCost_P} = {OwnerOccupiedPropertyDamage * OwnerExposureFactor + Renter/OwnerEquipmentDamage * Rent/OwnerExposureFactor} $$
+
+$${+ TemporaryHousingCosts + BuybackCost + RentSubsidyCost} $$
+
+#### __3.2.2.1 Buyback Cost__
+The buyback cost is calculated as the number of offers sent in each quarter to high-risk houses in each region multiplied by the median house price in each region.
+
+$$ BuybackCost = {NumberOfBuybackOffers * MedianHousePrice} $$
+
+#### __3.2.2.2 Rent Subsidy Cost__
+The rent subsidy cost is similarly calculated, however as it is a subsidy for 6 months, it is multiplied by 0.3 as only 30% of the rent price is paid and costs occur for the quarter in which the offer was accepted as well as the following quarter
+
+$$ RentSubsidyCost = {NumberOfRentOffers * MedianRentPrice * 0.3} $$
+
+
+# __4. Pricing and Costs__
+Assessing the pricing and economic costs associated with the scheme is integral to ensuring its success. To achieve this, Storslysias’ economics costs were modelled and projected from the years 2020-2150 for all quarters 1000 times. Refer to [Simulations.r](https://github.com/Actuarial-Control-Cycle-Part-A-2023-T1/group-github-pages-erm-evidently-regretting-myprofession/blob/40651533f904d94cb505c8bf4228e864e078b443/ModellingProcedure.md) for the R code generating the simulations and [1000Simulations.xslx](https://github.com/Actuarial-Control-Cycle-Part-A-2023-T1/group-github-pages-erm-evidently-regretting-myprofession/blob/40651533f904d94cb505c8bf4228e864e078b443/ModellingProcedure.md) to view the generated 1000 simulations. The averages of these costs were then taken and the following results were produced. All costs are in 2021 figures.
+TODO: add relevant links
+
+## __4.1 Short Term with Program Economic Costs vs Without Program__  
 In the short term, the costs across all SSP scenarios associated with the program are much higher than without the program. This can be attributed to the large buyback and rent costs which occur in the short term. A clear downtrend in costs with the program is observed as less buyback and rent offers are made and costs from emergency relocation are reduced. The non-program costs do not experience any clear trends in the short term. Both experience seasonality with costs spiking in the third quarter of each year. This is visualized in the following figure.
 
 ![ShortTermCostComparison](https://github.com/Actuarial-Control-Cycle-Part-A-2023-T1/group-github-pages-erm-evidently-regretting-myprofession/blob/9442ce1b9854f755e03fd8cf0584db69275d9377/ShortTermCostComparison.png)
 
-## __3.2 Long term with Program Economic Costs vs Without Program__  
+## __4.2 Long term with Program Economic Costs vs Without Program__  
 Over the long term, it is clear that the with policy SSP scenarios experience far less costs between the years 2030 to 2150 than their without policy counterparts. This is especially prevalent in the very high emissions SSP scenario which reaches costs nearing 8 billion Ꝕ by 2150 whilst with the policy it reaches about 2 billion Ꝕ. The very high and high emissions scenarios experience an uptrend after 2030, while the low and medium emissions scenarios experience an uptrend until around 2080 before down trending after that. This impacts the effectiveness of the program for the low and medium scenario as in the long term, the economic costs without the program decrease, making the initial investment into the buyback scheme less effective as the cost reduction becomes smaller. This is visualized in the following figure.
 
 ![LongTermCostComparison](https://github.com/Actuarial-Control-Cycle-Part-A-2023-T1/group-github-pages-erm-evidently-regretting-myprofession/blob/9442ce1b9854f755e03fd8cf0584db69275d9377/LongTermCostComparison.png)
 
-## __3.3 Capital Requirements for Solvency__  
+## __4.3 Capital Requirements for Solvency__  
 The average simulated cost was summarised in aggregate, where positive cash flows stem from initial capital and regular capital injections, negative cash flows are the simulated costs. The methodology adopted to determine capital requirements was the set of reasonable values such that at least 995 of the 1000 simulations produced a net positive cash flow under all climate change scenarios. This provides a 99.5% confidence in the solvency of the scheme. In order to reduce the solution space of capital the regular injection was fixed. The initial capital was then set as below (Ꝕ 1,000’s):
 
 ----- | WithScheme | Without Scheme
@@ -105,13 +171,13 @@ Initial Capital | 15,000,000 | 15,000,000 |
 Yearly Capital | 1,384,190 | 3,858,250 |
 
 
-## __3.4 Contrasting Voluntary vs Emergency Displacement Costs with Program__  
+## __4.4 Contrasting Voluntary vs Emergency Displacement Costs with Program__  
 Clearly, voluntary costs are much higher in the short term due to the buyback and renting schemes, however, they quickly decrease and by 2030 are near zero. This results in the initial downtrend in short-term emergency displacement costs. After 2030, emergency displacement costs begin to rise for the very high and high emissions scenarios, while the medium scenario remains relatively stable, and the low emissions scenario remains stable up until about 2080 where a slight downtrend is observed. Emergency displacement costs with the program experience similar trends as without the program, however at a far reduced economic cost level; following the bulk of the relocation under the program. This is visualized in the following figure.
 
 ![DisplacementCostComparison](https://github.com/Actuarial-Control-Cycle-Part-A-2023-T1/group-github-pages-erm-evidently-regretting-myprofession/blob/9442ce1b9854f755e03fd8cf0584db69275d9377/DisplacementCostComparison.png)
 
-# 4. Assumptions
-## __4.1 Key Assumptions__ 
+# 5. Assumptions
+## __5.1 Key Assumptions__ 
  1 .Economic conditions are stable for 2021 onwards. This includes GDP, costs for temporary relocation and inflation in the labour, house and private rental markets. This is to avoid the uncertainty brought by performing economic forecasts and to reduce the complexity of models.
  2.	It is assumed that each region is split into city risk areas of: high, medium and low with areas being evenly distributed across the region based on the FEMA risk index map (hazards.fema.gov, n.d.). Refer to the following figure.
  
@@ -123,7 +189,7 @@ Clearly, voluntary costs are much higher in the short term due to the buyback an
  5.	Labour cost surge is assumed to be uniformly distributed.  For a major event, the increase is between 35% to 50%, for a medium event, 15% to 30% and for a minor event, the increase is between 0 to 15%.  Similarly, the equipment damage cost increase is assumed to be uniformly distributed between 40% to 70%.
 
 > Exploratory Data Analysis was done to get the required clusters
-## __4.2 Other assumptions__ 
+## __5.2 Other assumptions__ 
 *  Proportions of owner-occupied properties and renter-occupied properties will be constant in the absence of the policy
 *  Houses that are damaged by a natural hazard will be repaired or rebuilt in the same location
 *  The expected frequency of disasters is a linear, constantly changing process within the 10-year intervals provided by the SSP model. 
@@ -131,13 +197,13 @@ Clearly, voluntary costs are much higher in the short term due to the buyback an
 *  All buyback and rent offers that are extended to Storlysian residents are accepted
 
 
-# 5. Risk and Risk Mitigation Considerations
+# 6. Risk and Risk Mitigation Considerations
 ![Risk Assessment Chart](https://user-images.githubusercontent.com/129591024/229504622-ee4688a0-3013-4579-a6e7-c919d0c57c4a.png)
 Refer to [Risk Register.pdf](https://github.com/Actuarial-Control-Cycle-Part-A-2023-T1/group-github-pages-erm-evidently-regretting-myprofession/files/11138147/Risk.Register.pdf) for comprehensive risk categorization.  
-## __5.1 Key risks__  
-###  __5.1.1 Model Risk__  
+## __6.1 Key risks__  
+###  __6.1.1 Model Risk__  
 The model parameters are built on historical trends. A deviation in the assumed relocation acceptance rate will affect the short and long-term costs of the policy.  
-* __5.1.1.1 Analysis__  
+* __6.1.1.1 Analysis__  
 The sensitivity of the model to a change in assumptions was performed by adjusting the relocation acceptance rates and performing 100 simulations under the Very High Emissions scenario.  
 
 Sensitivity Scenario | Impact
@@ -147,40 +213,39 @@ Sensitivity Scenario | Impact
 
 ![Sensitivity Analysis on Projected Costs under VH Scenario](https://user-images.githubusercontent.com/129591024/229513802-5e0bcde6-f5b2-4a92-ac1f-374219b01c68.png)
 >TO DO, add Excel + R code
-* __5.1.1.2 Mitigation__  
+* __6.1.1.2 Mitigation__  
 Careful monitoring of the actual vs expected costs year on year will allow the team to adjust the model parameters to better reflect the relocation appetite of Storslysian residents.  
 
-###  __5.1.2 Public Backlash__  
+###  __6.1.2 Public Backlash__  
 Residents living in high-risk areas can view the policy as a forceful method to evict homeowners. Additionally, residents and politicians may lobby against the policy as they may advocate against taxpayer-funded social insurance programs. This can cause the implementation of the scheme to be negatively impacted if it faces resistance from the population of Storslysia.  
-* __5.1.2.1 Analysis__  
+* __6.1.2.1 Analysis__  
 Public backlash can lead to lower relocation acceptance rates and funding difficulties. We deemed the likelihood of this risk to be relatively high with the impact to be middling. 
-* __5.1.2.2 Mitigation__  
+* __6.1.2.2 Mitigation__  
 Public education on the policy and its key benefits and risks to better inform the public of the benefits of relocation. Consistent promotion of the policy through multiple mediums of communication will increase exposure and awareness of the scheme.  
 
 
-###  __5.1.3 Extreme Climate Change__  
+###  __6.1.3 Extreme Climate Change__  
 The frequency and severity of natural disasters are greatly impacted by climate change. This, in turn, can exacerbate the damages and costs incurred by the government.  
 In the event of extreme climate change, the sustained costs can be extremely high and possibly un-operable.  
-* __5.1.3.1 Analysis__  
+* __6.1.3.1 Analysis__  
 The model looks at cost projections for four emission scenarios. The Very High emission scenario emphasises uncontrolled climate change growth which would greatly increase the frequency and severity of catastrophic events. (Refer to Figure 5.4). This scenario would result in extreme projected losses year on year for Storslysia from 2050 onwards.  
 ![Projected costs under different emissions scenarios](https://user-images.githubusercontent.com/129591024/229518402-5b975e91-4821-4c15-8bd8-bb91538fe9b3.png)
 >TO DO, add Excel + R code
-* __5.1.3.2 Mitigation__  
+* __6.1.3.2 Mitigation__  
 Increased coverage of the buyback scheme can further mitigate some costs if we foresee uncontrolled progression into a Very High emissions scenario. This risk can be periodically monitored to allow proactive updates to the scheme.  
 
 
 
-## 5.2 Economic Cost Reduction Certainty  
+## 6.2 Economic Cost Reduction Certainty  
 TO DO
 
-## 5.3 Program GDP Constraint Certainty  
+## 6.3 Program GDP Constraint Certainty  
 TO DO
 
-# 6. Data and Data Limitations
+# 7. Data and Data Limitations
 
 
-# 7. Bibliography and Appendix
-## Bibliography  
+# 8. Bibliography  
 Sources used to support this case study can be found in [SOA Case Study Bibliography.docx](https://github.com/Actuarial-Control-Cycle-Part-A-2023-T1/group-github-pages-erm-evidently-regretting-myprofession/files/11146209/SOA.Case.Study.Bibliography.docx)
 
 ## Appendix  
