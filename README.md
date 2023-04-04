@@ -235,7 +235,6 @@ The model looks at cost projections for four emission scenarios. The Very High e
 Increased coverage of the buyback scheme can further mitigate some costs if we foresee uncontrolled progression into a Very High emissions scenario. This risk can be periodically monitored to allow proactive updates to the scheme.  
 
 
-
 ## 6.2 Economic Cost Reduction Certainty  
 TO DO
 
@@ -246,6 +245,54 @@ TO DO
 
 
 # 8. Bibliography  
-Sources used to support this case study can be found in [SOA Case Study Bibliography.docx](https://github.com/Actuarial-Control-Cycle-Part-A-2023-T1/group-github-pages-erm-evidently-regretting-myprofession/files/11146209/SOA.Case.Study.Bibliography.docx)
+Bureau, U.C. (n.d.). In 2020, 9.7% of Housing Was Vacant, Down From 11.4% in 2010. [online] Census.gov. Available at: https://www.census.gov/library/stories/2021/08/united-states-housing-vacancy-rate-declined-in-past-decade.html.
 
-## Appendix  
+Channels, N.G.D. (2022). Emergency financial support for people affected by floods. [online] NSW Government. Available at: https://www.nsw.gov.au/floods/financial-support/people.
+
+hazards.fema.gov. (n.d.). National Risk Index | FEMA.gov. [online] Available at: https://hazards.fema.gov/nri/.
+
+Insurance Council Australia (n.d.). Flood insurance explained. [online] Insurance Council of Australia. Available at: https://insurancecouncil.com.au/resource/flood-insurance-explained/.
+
+IPCC (2023a). Sixth Assessment Report Synthesis Report. [online] Available at: https://report.ipcc.ch/ar6syr/pdf/IPCC_AR6_SYR_SlideDeck.pdf.
+
+IPCC (2023b). [online] Ipcc.ch. Available at: https://www.ipcc.ch/report/ar6/syr/downloads/figures/summary-for-policymakers/IPCC_AR6_SYR_SPM_Figure5.png
+[Accessed 23 Mar. 2023].
+
+Kwan, A. (2021). Demand surge and storm surge: the waves wiping out your supply chains | Swiss Re. [online] corporatesolutions.swissre.com. Available at: https://corporatesolutions.swissre.com/insights/knowledge/climate-change-supply-chains-risk-intersection.html 
+[Accessed 28 Feb. 2023]. Risk Mitigation (reducing demand surge after CAT events).
+
+Macrotrends (2020). U.S. GDP 1947-2020. [online] Macrotrends.net. Available at: https://www.macrotrends.net/countries/USA/united-states/gdp-gross-domestic-product 
+[Accessed 19 Mar. 2023].
+
+Macrotrends (2023). U.S. Trade Balance 1970-2020. [online] www.macrotrends.net. Available at: https://www.macrotrends.net/countries/USA/united-states/trade-balance-deficit 
+[Accessed 19 Mar. 2023].
+
+NSW, D. of R. (2022). Resilient Homes Program. [online] NSW Government. Available at: https://www.nsw.gov.au/regional-nsw/northern-rivers-reconstruction-corporation/resilient-homes-fund/resilient-homes-program 
+[Accessed 23 Mar. 2023].
+
+OECD (2011). Forecasting methods and analytical tools - OECD. [online] www.oecd.org. Available at: https://www.oecd.org/economy/outlook/forecastingmethodsandanalyticaltools.htm
+[Accessed 19 Mar. 2023].
+
+Paddam, S., Liu, C. and Philip, S. (2022). Home insurance affordability and socioeconomic equity in a changing climate. [online] Available at: https://actuaries.asn.au/Library/Opinion/2022/HIAGreenPaper.pdf.
+
+
+PLANNED RELOCATION, DISASTERS AND CLIMATE CHANGE: CONSOLIDATING GOOD PRACTICES AND PREPARING FOR THE FUTURE REPORT DISASTERS CLIMATE CHANGE AND DISPLACEMENT EVIDENCE FOR ACTION NRC NORWEGIAN REFUGEE COUNCIL. (2014). Available at: https://www.unhcr.org/54082cc69.pdf.
+
+Psu.edu. (2011). What is a Natural Hazard? | GEOG 30N: Environment and Society in a Changing World. [online] Available at: https://www.e-education.psu.edu/geog30/node/378
+[Accessed 6 Mar. 2023].
+
+Resti (2013). ESTIMATION OF CLAIM COST DATA USING ZERO ADJUSTED GAMMA AND INVERSE GAUSSIAN REGRESSION MODELS. Journal of Mathematics and Statistics, [online] 9(3), pp.186–192. Available at: https://thescipub.com/pdf/jmssp.2013.186.192.pdf
+[Accessed 23 Mar. 2023].
+
+Schuster, S., Palutikof, J., Boulter, S., Ash, A., Smith, S. and Parry, M. (2013). Natural hazards and insurance. [online] John Wiley & Sons, pp.133–140. Available at: https://www.aph.gov.au/DocumentStore.ashx?id=c768fac3-993a-402b-9bbb-ebc669ad3764 
+[Accessed 27 Feb. 2023].
+
+Team, I. (2019). How Demand Surge After Natural Disasters Impacts the Cost and Timing of Recovery. [online] CoreLogic®. Available at: https://www.corelogic.com/intelligence/how-demand-surge-after-natural-disasters-impacts-the-cost-and-timing-of-recovery/ 
+[Accessed 28 Feb. 2023]. (Demand surge assumptions/parameters).
+
+UCAR (2019). How Tornadoes Form | UCAR Center for Science Education. [online] Ucar.edu. Available at: https://scied.ucar.edu/learning-zone/storms/how-tornadoes-form.
+
+www.fema.gov. (n.d.). National Flood Insurance Program Community Rating System | FEMA.gov. [online] Available at: https://www.fema.gov/floodplain-management/community-rating-system.
+
+
+# 9. Appendix  
