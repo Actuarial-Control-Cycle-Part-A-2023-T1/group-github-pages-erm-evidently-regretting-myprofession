@@ -133,7 +133,7 @@ For temporary housing, the amount of affected houses is first calculated by divi
 $$ TemporaryHousingCost = {{TotalProjectedPropertyDamage\over MedianHousePrice} * 4 * AvgPeoplePerHousehold * AverageTempHousingCost * 3} $$
 
 ### __3.2.2 With the Program__
-The three main costs without the program are still present within the program, however the exposure to them is reduced through the buyback and rent subsidy scheme. The owner exposure factors are calculated as the change in the number of owner households from the base case year 2020. Similarly, the renter/owner exposure factors are calculated as the change in the number of owner and renter households from the base case year 2020. These factors multiply the owner-occupied house percentages and owner and renter occupied house percentages respectively to reflect the change in exposure to these risks for individuals who move from a high-risk city to a low-risk city within a region. Additionally, costs are introduced for the buyback and rent subsidy schemes.
+The three main costs without the program are still present within the program, however the exposure to them is reduced through the buyback and rent subsidy scheme. The owner exposure factors are calculated as the change in the number of owner households from the base case year 2020. They can be found in [Migration Model.xslx](https://github.com/Actuarial-Control-Cycle-Part-A-2023-T1/group-github-pages-erm-evidently-regretting-myprofession/blob/ab9c99a7e679b6035c5924956b99b1cf755b3c69/Migration%20Model.xlsx) under the "OwnerExposure" sheet. Similarly, the renter/owner exposure factors are calculated as the change in the number of owner and renter households from the base case year 2020 and can be found under the [Migration Model.xslx](https://github.com/Actuarial-Control-Cycle-Part-A-2023-T1/group-github-pages-erm-evidently-regretting-myprofession/blob/ab9c99a7e679b6035c5924956b99b1cf755b3c69/Migration%20Model.xlsx) "Exposure Factors" sheet. These factors multiply the owner-occupied house percentages and owner and renter occupied house percentages respectively to reflect the change in exposure to these risks for individuals who move from a high-risk city to a low-risk city within a region. Additionally, costs are introduced for the buyback and rent subsidy schemes.
 
 $$ {EconomicCost_P} = {OwnerOccupiedPropertyDamage * OwnerExposureFactor + Renter/OwnerEquipmentDamage * Rent/OwnerExposureFactor} $$
 
@@ -144,11 +144,14 @@ The buyback cost is calculated as the number of offers sent in each quarter to h
 
 $$ BuybackCost = {NumberOfBuybackOffers * MedianHousePrice} $$
 
+The calculated costs can be found under the [Migration Model.xslx](https://github.com/Actuarial-Control-Cycle-Part-A-2023-T1/group-github-pages-erm-evidently-regretting-myprofession/blob/ab9c99a7e679b6035c5924956b99b1cf755b3c69/Migration%20Model.xlsx) "Buyback Cost" sheet.
+
 #### __3.2.2.2 Rent Subsidy Cost__
 The rent subsidy cost is similarly calculated, however as it is a subsidy for 6 months, it is multiplied by 0.3 as only 30% of the rent price is paid and costs occur for the quarter in which the offer was accepted as well as the following quarter
 
 $$ RentSubsidyCost = {NumberOfRentOffers * MedianRentPrice * 0.3} $$
 
+The calculated costs can be found under the [Migration Model.xslx](https://github.com/Actuarial-Control-Cycle-Part-A-2023-T1/group-github-pages-erm-evidently-regretting-myprofession/blob/ab9c99a7e679b6035c5924956b99b1cf755b3c69/Migration%20Model.xlsx) "Rent Subsidy" sheet.
 
 # __4. Pricing and Costs__
 Assessing the pricing and economic costs associated with the scheme is integral to ensuring its success. To achieve this, Storslysias’ economics costs were modelled and projected from the years 2020-2150 for all quarters 1000 times. Refer to [1000sim.r](https://github.com/Actuarial-Control-Cycle-Part-A-2023-T1/group-github-pages-erm-evidently-regretting-myprofession/blob/657d83efa813cc427f38425929139fb83fd37d92/1000sim.R) for the R code generating the simulations. The averages of these costs were then taken and the following results were produced. Refer to [NoPolicyAverageCosts.csv](https://github.com/Actuarial-Control-Cycle-Part-A-2023-T1/group-github-pages-erm-evidently-regretting-myprofession/blob/a2b451223d5d465e60e5458a9afef0997923521f/No%20Policy%20Average%20Costs.csv) and [PolicyAverageCosts.csv](https://github.com/Actuarial-Control-Cycle-Part-A-2023-T1/group-github-pages-erm-evidently-regretting-myprofession/blob/a2b451223d5d465e60e5458a9afef0997923521f/Policy%20Average%20Costs.csv) to view the generated average costs with and without the policy after 1000 simulations.  All costs are in 2021 figures.
