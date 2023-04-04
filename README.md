@@ -84,21 +84,18 @@ Key metrics expected to be reported to ensure the objectives of the program are 
 
 
 # 3. Pricing and Costs
-Assessing the pricing and economic costs associated with the scheme is integral to ensuring its success. To achieve this, Storslysias’ economics costs were modelled and projected from the years 2020-2150 for all quarters 1000 times. Refer to [ModellingProcedure.md](https://github.com/Actuarial-Control-Cycle-Part-A-2023-T1/group-github-pages-erm-evidently-regretting-myprofession/files/11138147/ModellingProcedure.md) for a comprehensive look at the modelling procedure. The averages of these costs were then taken and the following results were produced. All costs are in 2021 figures.
-TODO: Add modelling procedure pdf
+Assessing the pricing and economic costs associated with the scheme is integral to ensuring its success. To achieve this, Storslysias’ economics costs were modelled and projected from the years 2020-2150 for all quarters 1000 times. Refer to [ModellingProcedure.md](https://github.com/Actuarial-Control-Cycle-Part-A-2023-T1/group-github-pages-erm-evidently-regretting-myprofession/blob/40651533f904d94cb505c8bf4228e864e078b443/ModellingProcedure.md) for a comprehensive look at the modelling procedure. The averages of these costs were then taken and the following results were produced. All costs are in 2021 figures.
 
 ## __3.1 Short Term with Program Economic Costs vs Without Program__  
 In the short term, the costs across all SSP scenarios associated with the program are much higher than without the program. This can be attributed to the large buyback and rent costs which occur in the short term. A clear downtrend in costs with the program is observed as less buyback and rent offers are made and costs from emergency relocation are reduced. The non-program costs do not experience any clear trends in the short term. Both experience seasonality with costs spiking in the third quarter of each year. This is visualized in the following figure.
 
-![ShortTermCostComparison](https://user-images.githubusercontent.com/129591024/229504622-ee4688a0-3013-4579-a6e7-c919d0c57c4a.png)
-TODO: Add short term graph
+![ShortTermCostComparison](https://github.com/Actuarial-Control-Cycle-Part-A-2023-T1/group-github-pages-erm-evidently-regretting-myprofession/blob/9442ce1b9854f755e03fd8cf0584db69275d9377/ShortTermCostComparison.png)
 
 ## __3.2 Long term with Program Economic Costs vs Without Program__  
 Over the long term, it is clear that the with policy SSP scenarios experience far less costs between the years 2030 to 2150 than their without policy counterparts. This is especially prevalent in the very high emissions SSP scenario which reaches costs nearing 8 billion Ꝕ by 2150 whilst with the policy it reaches about 2 billion Ꝕ. The very high and high emissions scenarios experience an uptrend after 2030, while the low and medium emissions scenarios experience an uptrend until around 2080 before down trending after that. This impacts the effectiveness of the program for the low and medium scenario as in the long term, the economic costs without the program decrease, making the initial investment into the buyback scheme less effective as the cost reduction becomes smaller. This is visualized in the following figure.
 
-![LongTermCostComparison](https://user-images.githubusercontent.com/129591024/229504622-ee4688a0-3013-4579-a6e7-c919d0c57c4a.png)
+![LongTermCostComparison](https://github.com/Actuarial-Control-Cycle-Part-A-2023-T1/group-github-pages-erm-evidently-regretting-myprofession/blob/9442ce1b9854f755e03fd8cf0584db69275d9377/LongTermCostComparison.png)
 
-TODO: Add long term graph
 ## __3.3 Capital Requirements for Solvency__  
 The average simulated cost was summarised in aggregate, where positive cash flows stem from initial capital and regular capital injections, negative cash flows are the simulated costs. The methodology adopted to determine capital requirements was the set of reasonable values such that at least 995 of the 1000 simulations produced a net positive cash flow under all climate change scenarios. This provides a 99.5% confidence in the solvency of the scheme. In order to reduce the solution space of capital the regular injection was fixed. The initial capital was then set as below (Ꝕ 1,000’s):
 
@@ -111,8 +108,8 @@ Yearly Capital | 1,384,190 | 3,858,250 |
 ## __3.4 Contrasting Voluntary vs Emergency Displacement Costs with Program__  
 Clearly, voluntary costs are much higher in the short term due to the buyback and renting schemes, however, they quickly decrease and by 2030 are near zero. This results in the initial downtrend in short-term emergency displacement costs. After 2030, emergency displacement costs begin to rise for the very high and high emissions scenarios, while the medium scenario remains relatively stable, and the low emissions scenario remains stable up until about 2080 where a slight downtrend is observed. Emergency displacement costs with the program experience similar trends as without the program, however at a far reduced economic cost level; following the bulk of the relocation under the program. This is visualized in the following figure.
 
-![DisplacementCostComparison](https://user-images.githubusercontent.com/129591024/229504622-ee4688a0-3013-4579-a6e7-c919d0c57c4a.png)
-TODO: Add displacement graph
+![DisplacementCostComparison](https://github.com/Actuarial-Control-Cycle-Part-A-2023-T1/group-github-pages-erm-evidently-regretting-myprofession/blob/9442ce1b9854f755e03fd8cf0584db69275d9377/DisplacementCostComparison.png)
+
 # 4. Assumptions
 * 4.1 Key Assumptions
 > Exploratory Data Analysis was done to get the required clusters
