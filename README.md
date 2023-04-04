@@ -114,10 +114,23 @@ Clearly, voluntary costs are much higher in the short term due to the buyback an
 ![DisplacementCostComparison](https://user-images.githubusercontent.com/129591024/229504622-ee4688a0-3013-4579-a6e7-c919d0c57c4a.png)
 TODO: Add displacement graph
 # 4. Assumptions
-* 4.1 Key Assumptions
-> Exploratory Data Analysis was done to get the required clusters
-* 4.2 Other assumptions
+## __4.1 Key Assumptions__ 
+ 1 .Economic conditions are stable for 2021 onwards. This includes GDP, costs for temporary relocation and inflation in the labour, house and private rental markets. This is to avoid the uncertainty brought by performing economic forecasts and to reduce the complexity of models.
+ 2.	It is assumed that each region is split into city risk areas of: high, medium and low with areas being evenly distributed across the region based on the FEMA risk index map (hazards.fema.gov, n.d.). Refer to Figure 4.1.
+ 
+![Figure 4 1](https://user-images.githubusercontent.com/107458550/229767793-aac393f1-5a26-4769-89b9-ac9ede03a2b5.png)
 
+ 3.	The frequency of hazard event estimates is based on post 1991 historical data to reduce model instability. It is assumed that technological advancements within this time frame have led to reduced fatalities, injuries and increased resistance and resilience to disasters. These innovations lead us to consider data prior to 1991 to not be an adequate representation of future trends.
+ 4.	It is assumed that the hazard event frequency in each year, quarter, risk level area, region and with different hazard categories is independently Poisson distributed.
+ 5.	Labour cost surge is assumed to be uniformly distributed.  For a major event, the increase is between 35% to 50%, for a medium event, 15% to 30% and for a minor event, the increase is between 0 to 15%.  Similarly, the equipment damage cost increase is assumed to be uniformly distributed between 40% to 70%.
+
+> Exploratory Data Analysis was done to get the required clusters
+## __4.2 Other assumptions__ 
+*  Proportions of owner-occupied properties and renter-occupied properties will be constant in the absence of the policy
+*  Houses that are damaged by a natural hazard will be repaired or rebuilt in the same location
+*  The expected frequency of disasters is a linear, constantly changing process within the 10-year intervals provided by the SSP model. 
+*  The severity of events will be more highly distributed in riskier areas
+*  All buyback and rent offers that are extended to Storlysian residents are accepted
 
 # 5. Risk and Risk Mitigation Considerations
 ![Risk Assessment Chart](https://user-images.githubusercontent.com/129591024/229504622-ee4688a0-3013-4579-a6e7-c919d0c57c4a.png)
