@@ -31,10 +31,24 @@ More information on GitHub Pages can be found [here](https://pages.github.com/)
 
 # 1. Executive Summary
 ## __Objectives__  
-TO DO 
+The objective of this report is to explore a proposed social insurance program for Storslysia that:
+*  Covers the entire population of Storslysia;
+*  Covers both voluntary (proactive) and involuntary displacement arising from catastrophic climate-related events;
+*  Reduces costs from catastrophic climate-related events with a high degree of certainty; and
+*  Prevents costs arising from voluntary and involuntary displacement exceeding 10% of Storslysia’s GDP with a high degree of certainty.
 
 ## __Recommendations__  
-TO DO 
+Climate change is a material emerging risk; one where the impact on everyday life is becoming apparent. The social insurance program defined in this report aims to provide a realistic approach to tackling the catastrophe risk that ensues. Modelling indicates that the maximum average cost of natural perils under SSP climate scenarios can total up to 7,937,354,707,611Ꝕ
+in a quarter. Global climate reports from (IPCC, 2023a) indicate that global warming impacts are trending closer to high and very high scenarios, hence the impact of such a cost is very real and imminent. In this context, the following recommendations are made:
+*  Attempt to plan and implement the program to some extent;
+*  Adopt other risk mitigation techniques where relocation is too costly, such as:
+   *  Emergency service and evacuation action plans;
+   *  Retrofitting infrastructure;
+   *  Policy-based approach to incentivising less development in high-risk cities/regions;
+   *  Policy-based building standards across high-risk regions/cities, with relevant enforcement and regulation; and
+   *  Education programs to alert high-risk residents of the threat arising from natural perils.
+*   Conduct community consultation on the relocation program; and
+*   Monitor and support insurance companies to provide affordable premiums, which can reduce under-insurance and subsequently the need for government support and services in the event of a natural disaster.
 
 # 2. Program Design
 
@@ -175,6 +189,7 @@ The average simulated cost was summarised in aggregate, where positive cash flow
 Initial Capital | 15,000,000 | 15,000,000 |
 Yearly Capital | 1,384,190 | 3,858,250 |
 
+The calculations of average per year costs were performed here [RuinModelWithPolicy.xlsx](https://github.com/Actuarial-Control-Cycle-Part-A-2023-T1/group-github-pages-erm-evidently-regretting-myprofession/blob/7cf192a3cdcafe2e12e48627d05ecdc9cf12e9f0/RuinModel_Policy_22032023.xlsx) and [RuinModelWithoutPolicy.xlsx](https://github.com/Actuarial-Control-Cycle-Part-A-2023-T1/group-github-pages-erm-evidently-regretting-myprofession/blob/7cf192a3cdcafe2e12e48627d05ecdc9cf12e9f0/RuinModel_NoPolicy_22032023.xlsx).
 
 ## __4.4 Contrasting Voluntary vs Emergency Displacement Costs with Program__  
 Clearly, voluntary costs are much higher in the short term due to the buyback and renting schemes, however, they quickly decrease and by 2030 are near zero. This results in the initial downtrend in short-term emergency displacement costs. After 2030, emergency displacement costs begin to rise for the very high and high emissions scenarios, while the medium scenario remains relatively stable, and the low emissions scenario remains stable up until about 2080 where a slight downtrend is observed. Emergency displacement costs with the program experience similar trends as without the program, however at a far reduced economic cost level; following the bulk of the relocation under the program. This is visualized in the following figure.
