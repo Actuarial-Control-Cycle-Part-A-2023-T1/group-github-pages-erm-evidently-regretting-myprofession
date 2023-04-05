@@ -1,30 +1,6 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-8d59dc4de5201274e310e4c54b9627a8934c3b88527886e3b421487c677d23eb.svg)](https://classroom.github.com/a/elzutNYu)
 [![Open in Codespaces](https://classroom.github.com/assets/launch-codespace-f4981d0f882b2a3f0472912d15f9806d57e124e0fc890972558857b51b24a6f9.svg)](https://classroom.github.com/open-in-codespaces?assignment_repo_id=10712614)
 
-# (keep this for examples of formats, remove at end)
-# Actuarial Theory and Practice A @ UNSW 
-
-_"Tell me and I forget. Teach me and I remember. Involve me and I learn" - Benjamin Franklin_
-
----
-
-### Congrats on completing the [2023 SOA Research Challenge](https://www.soa.org/research/opportunities/2023-student-research-case-study-challenge/)!
-
->Now it's time to build your own website to showcase your work.  
->To create a website on GitHub Pages to showcase your work is very easy.
-
-This is written in markdown language. 
->
-* Click [link](https://classroom.github.com/a/elzutNYu) to accept your group assignment.
-
-
-#### Follow the [guide doc](Doc1.pdf) to submit your work. 
----
->Be creative! Feel free to link to embed your [data](hazard-event-data.csv), [code](sample-data-clean.ipynb), [image](unsw.png) here
-
-More information on GitHub Pages can be found [here](https://pages.github.com/)
-# (keep this for examples of formats, remove at end)
-
 # Storslysia Relocation Social Insurance Proposal
 ![SOA cover image](https://user-images.githubusercontent.com/129591024/229493306-285e26b7-dcef-4211-9977-6217410a720c.jpg)
 ### By ERM Consulting
@@ -248,8 +224,8 @@ Public education on the policy and its key benefits and risks to better inform t
 The frequency and severity of natural disasters are greatly impacted by climate change. This, in turn, can exacerbate the damages and costs incurred by the government.  
 In the event of extreme climate change, the sustained costs can be extremely high and possibly un-operable.  
 * __6.1.3.1 Analysis__  
-The model looks at cost projections for four emission scenarios. The Very High emission scenario emphasises uncontrolled climate change growth which would greatly increase the frequency and severity of catastrophic events. (Refer to Figure 5.4). This scenario would result in extreme projected losses year on year for Storslysia from 2050 onwards. The associated R code can be found in [Risk Table Plot.R](https://github.com/Actuarial-Control-Cycle-Part-A-2023-T1/group-github-pages-erm-evidently-regretting-myprofession/blob/c26ace1be3a65ed1f86e1d237c41800f6ae3a7f6/Risk%20table%20plot.R)  
-![Projected costs under different emissions scenarios](https://user-images.githubusercontent.com/129591024/229518402-5b975e91-4821-4c15-8bd8-bb91538fe9b3.png) .
+The model looks at cost projections for four emission scenarios. The Very High emission scenario emphasises uncontrolled climate change growth which would greatly increase the frequency and severity of catastrophic events. (Refer to Figure 5.4). This scenario would result in extreme projected losses year on year for Storslysia from 2050 onwards. The associated R code can be found in [Risk Table Plot.R](https://github.com/Actuarial-Control-Cycle-Part-A-2023-T1/group-github-pages-erm-evidently-regretting-myprofession/blob/c26ace1be3a65ed1f86e1d237c41800f6ae3a7f6/Risk%20table%20plot.R)  .
+![Projected costs under different emissions scenarios](https://user-images.githubusercontent.com/129591024/229518402-5b975e91-4821-4c15-8bd8-bb91538fe9b3.png)  
 
 * __6.1.3.2 Mitigation__  
 Increased coverage of the buyback scheme can further mitigate some costs if we foresee uncontrolled progression into a Very High emissions scenario. This risk can be periodically monitored to allow proactive updates to the scheme.  
@@ -262,6 +238,17 @@ After running 1000 simulations, it has been identified that in the short term, t
 After running 1000 simulations, program costs in all scenarios short and long term do not exceed the 10% GDP constraint 100% of the time.  
 
 # 7. Data and Data Limitations
+## 7.1 Truncation of Historical Data
+Historical events aren’t necessarily an accurate indicator of future events. As such, events prior to 1991 introduced instability in the frequency and severity models. We reason that technological advancements between 1991-2020 led to reduced fatalities, injuries and increased resistance and resilience to disasters. As such data prior to 1991 was truncated for the sake of analysis.  
+
+## 7.2 Property Damage Definition
+Property damage was assumed to entirely consist of damage to residential properties as there was insufficient data to differentiate the cost source. As a result, damage to belongings and other property had to be considered separately.  
+
+## 7.3 Hazard Type Data
+Multiple hazard categorisations being assigned to the same event caused uncertainty in the cluster analysis. As a result, the more severe hazard type took priority when analyzing the historical data.  
+
+## 7.4 Inter-regional risk profiles
+The supplied data only contained information pertaining to 6 regions in Storslysia and not granular data such as cities. As a result, it was assumed that each region consisted of 5% high-risk cities, 10% medium-risk cities and 85% low-risk cities as based on the US FEMA national risk index map (hazards.fema.gov, n.d.). Further, it was assumed that high-risk cities experience 90% of the major disasters, 85% of the medium disasters and 75% of the minor disasters, medium-risk cities experience 9.5% of the major disasters, 12.5% of the medium disasters and 20% of the minor disasters while the low-risk cities experience 0.5% of the major disasters, 2.5% of the medium disasters and 0.5% of the major disasters.  
 
 
 # 8. Bibliography  
