@@ -224,15 +224,15 @@ Refer to [Risk Register.pdf](https://github.com/Actuarial-Control-Cycle-Part-A-2
 ###  __6.1.1 Model Risk__  
 The model parameters are built on historical trends. A deviation in the assumed relocation acceptance rate will affect the short and long-term costs of the policy.  
 * __6.1.1.1 Analysis__  
-The sensitivity of the model to a change in assumptions was performed by adjusting the relocation acceptance rates and performing 100 simulations under the Very High Emissions scenario.  
+The sensitivity of the model to a change in assumptions was performed by adjusting the relocation acceptance rates and performing 100 simulations under the Very High Emissions scenario. The associated R code can be found in [Risk Table Plot.R](https://github.com/Actuarial-Control-Cycle-Part-A-2023-T1/group-github-pages-erm-evidently-regretting-myprofession/blob/c26ace1be3a65ed1f86e1d237c41800f6ae3a7f6/Risk%20table%20plot.R) .  
 
 Sensitivity Scenario | Impact
 -----|------
 -1% initial relocation acceptance rate | Short term costs: -10 billion dollars<br/>Long term costs: +30 billion dollars |
 +1% initial relocation acceptance rate | Short term costs: +10 billion dollars<br/>Long term costs: -30 billion dollars | 
 
-![Sensitivity Analysis on Projected Costs under VH Scenario](https://user-images.githubusercontent.com/129591024/229513802-5e0bcde6-f5b2-4a92-ac1f-374219b01c68.png)
->TO DO, add Excel + R code
+![Sensitivity Analysis on Projected Costs under VH Scenario](https://user-images.githubusercontent.com/129591024/229513802-5e0bcde6-f5b2-4a92-ac1f-374219b01c68.png)  
+
 * __6.1.1.2 Mitigation__  
 Careful monitoring of the actual vs expected costs year on year will allow the team to adjust the model parameters to better reflect the relocation appetite of Storslysian residents.  
 
@@ -248,18 +248,18 @@ Public education on the policy and its key benefits and risks to better inform t
 The frequency and severity of natural disasters are greatly impacted by climate change. This, in turn, can exacerbate the damages and costs incurred by the government.  
 In the event of extreme climate change, the sustained costs can be extremely high and possibly un-operable.  
 * __6.1.3.1 Analysis__  
-The model looks at cost projections for four emission scenarios. The Very High emission scenario emphasises uncontrolled climate change growth which would greatly increase the frequency and severity of catastrophic events. (Refer to Figure 5.4). This scenario would result in extreme projected losses year on year for Storslysia from 2050 onwards.  
-![Projected costs under different emissions scenarios](https://user-images.githubusercontent.com/129591024/229518402-5b975e91-4821-4c15-8bd8-bb91538fe9b3.png)
->TO DO, add Excel + R code
+The model looks at cost projections for four emission scenarios. The Very High emission scenario emphasises uncontrolled climate change growth which would greatly increase the frequency and severity of catastrophic events. (Refer to Figure 5.4). This scenario would result in extreme projected losses year on year for Storslysia from 2050 onwards. The associated R code can be found in [Risk Table Plot.R](https://github.com/Actuarial-Control-Cycle-Part-A-2023-T1/group-github-pages-erm-evidently-regretting-myprofession/blob/c26ace1be3a65ed1f86e1d237c41800f6ae3a7f6/Risk%20table%20plot.R)  
+![Projected costs under different emissions scenarios](https://user-images.githubusercontent.com/129591024/229518402-5b975e91-4821-4c15-8bd8-bb91538fe9b3.png) .
+
 * __6.1.3.2 Mitigation__  
 Increased coverage of the buyback scheme can further mitigate some costs if we foresee uncontrolled progression into a Very High emissions scenario. This risk can be periodically monitored to allow proactive updates to the scheme.  
 
 
 ## 6.2 Economic Cost Reduction Certainty  
-TO DO
+After running 1000 simulations, it has been identified that in the short term, the economic costs under the policy are more than the economic costs without the policy. This is due to the large costs incurred by the relocation incentive programs. In the long term however, the low emissions scenario has costs under the program less 75.2% of the time, the medium emissions scenario 96.3% of the time and the high and very high scenarios 100% of the time. This indicates that running the program in the low emissions scenario is quite risky hence it is not recommended to undertake the plan in its current state in this scenario. On the other hand, the medium, high and very high emissions scenarios pose very little to no risk. In the medium scenario where loss cases do occasionally occur, the difference in losses is on average -1,169,681.57Ꝕ  while the difference where cost reductions occur is on average 6,569,105.61Ꝕ . In conjunction with global climate reports from (IPCC, 2023a) it is recommended that the program be adopted and adapted in line with actuarial monitoring and judgement. Alternatively, the Storslysian government may want to consider implementing a voluntary retrofitting scheme rather than a voluntary relocation scheme if they deem the risk too high or a mixture of both (NSW, 2022). This scheme would consist of upgrading houses in areas of high risk to reduce the impact of natural disasters, in turn reducing costs.  
 
 ## 6.3 Program GDP Constraint Certainty  
-TO DO
+After running 1000 simulations, program costs in all scenarios short and long term do not exceed the 10% GDP constraint 100% of the time.  
 
 # 7. Data and Data Limitations
 
