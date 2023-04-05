@@ -184,7 +184,6 @@ Clearly, voluntary costs are much higher in the short term due to the buyback an
  4.	It is assumed that the hazard event frequency in each year, quarter, risk level area, region and with different hazard categories is independently Poisson distributed.
  5.	Labour cost surge is assumed to be uniformly distributed.  For a major event, the increase is between 35% to 50%, for a medium event, 15% to 30% and for a minor event, the increase is between 0 to 15%.  Similarly, the equipment damage cost increase is assumed to be uniformly distributed between 40% to 70%.
 
-> Exploratory Data Analysis was done to get the required clusters
 ## __5.2 Other assumptions__ 
 *  Proportions of owner-occupied properties and renter-occupied properties will be constant in the absence of the policy
 *  Houses that are damaged by a natural hazard will be repaired or rebuilt in the same location
@@ -201,6 +200,7 @@ Refer to [Risk Register.pdf](https://github.com/Actuarial-Control-Cycle-Part-A-2
 The model parameters are built on historical trends. A deviation in the assumed relocation acceptance rate will affect the short and long-term costs of the policy.  
 * __6.1.1.1 Analysis__  
 The sensitivity of the model to a change in assumptions was performed by adjusting the relocation acceptance rates and performing 100 simulations under the Very High Emissions scenario. The associated R code can be found in [Risk Table Plot.R](https://github.com/Actuarial-Control-Cycle-Part-A-2023-T1/group-github-pages-erm-evidently-regretting-myprofession/blob/c26ace1be3a65ed1f86e1d237c41800f6ae3a7f6/Risk%20table%20plot.R) .  
+The migration scenarios can be found in [Migration Model Up.xslx](https://github.com/Actuarial-Control-Cycle-Part-A-2023-T1/group-github-pages-erm-evidently-regretting-myprofession/blob/7d49c0f3b11ad53f65c8ea17a3d3be8f9aaf32ba/Migration%20Model%20Up.xlsx) and [Migration Model Down.xslx](https://github.com/Actuarial-Control-Cycle-Part-A-2023-T1/group-github-pages-erm-evidently-regretting-myprofession/blob/7d49c0f3b11ad53f65c8ea17a3d3be8f9aaf32ba/Migration%20Model%20Down.xlsx) under the "Migration Model (2)" and "Renter Migration Model 2" sheets.
 
 Sensitivity Scenario | Impact
 -----|------
