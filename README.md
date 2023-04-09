@@ -108,12 +108,12 @@ $$ EconomicCost = {OwnerOccupiedPropertyDamage + Renter/OwnerEquipmentDamage + T
 #### __3.2.1.1 Owner-occupied Property Damage__
 Owner-occupied property damage is calculated per region by multiplying the total projected property damage from disasters by the owner-occupied house percentage which is assumed to be constant without the program. Further for minor severity events, a uniformly distributed value for a labour surge increase between 0-15% is produced. For medium severity events this surge is between 15-30% and for major severity events between 30-50%. This is as (Team, 2019) suggests that the severity and size of an event directly impacts the probability of a labour surge.
 
-$$ OwnerOccupiedPropertyDamage = {TotalProjectedPropertyDamage * LabourSurgeIncrease * {OwnerOccupiedHouses\over NumberofHouses}} $$
+$$ OwnerOccupiedPropertyDamage = TotalProjectedPropertyDamage * LabourSurgeIncrease * {OwnerOccupiedHouses\over NumberofHouses} $$
 
 #### __3.2.1.2 Renter/Owner Equipment Damage__
 Renter/Owner Equipment Damage is calculated per region by generating a uniformly distributed value between 45-70% and multiplying this by total projected property damage from disasters. This value is then multiplied by the renter-and-owner-occupied housing percentage to account for its exposure to only renters and owners.
 
-$$ Renter/OwnerOccupiedEquipmentDamage = {TotalProjectedPropertyDamage * {(OwnerOccupiedHouses+RenterOccupiedHouses)\over NumberofHouses}} $$
+$$ Renter/OwnerOccupiedEquipmentDamage = TotalProjectedPropertyDamage * {(OwnerOccupiedHouses+RenterOccupiedHouses)\over NumberofHouses} $$
 
 $$ {* EquipmentValueProportion} $$
 
