@@ -1,6 +1,3 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-8d59dc4de5201274e310e4c54b9627a8934c3b88527886e3b421487c677d23eb.svg)](https://classroom.github.com/a/elzutNYu)
-[![Open in Codespaces](https://classroom.github.com/assets/launch-codespace-f4981d0f882b2a3f0472912d15f9806d57e124e0fc890972558857b51b24a6f9.svg)](https://classroom.github.com/open-in-codespaces?assignment_repo_id=10712614)
-
 # Storslysia Relocation Social Insurance Proposal
 ![SOA cover image](https://user-images.githubusercontent.com/129591024/229493306-285e26b7-dcef-4211-9977-6217410a720c.jpg)
 ### By ERM Consulting
@@ -89,7 +86,7 @@ A compound Poisson process was chosen to model the frequencies of disaster event
 
 $$ CompPois(λ_Y) = 	{\Sigma Pois(λ_{HYQRCS})} $$
 
-Here the compound process for any given year is the sum of independent Poisson processes with parameters $λ_{HYQRCS}$ which refers to the previously projected expected frequencies for each categorically different hazard event in each year, quarter, region, and city risk type for three different severity levels.
+Here the compound process for any given year is the sum of independent Poisson processes with parameters $$ λ_{HYQRCS} $$ which refers to the previously projected expected frequencies for each categorically different hazard event in each year, quarter, region, and city risk type for three different severity levels.
 
 ### __3.1.4 Damage Modelling__
 The Historical Storslysia Hazard Events dataset with positive claims from 1991-2020 was utilised to train and test various models with the logarithmic 2021 adjusted property damage figures as the dependent variable. The models tested include a Gamma generalised linear model, zero adjusted Gamma (ZAGA) and zero adjusted Inverse Gaussian (ZAIG) generalised additive models due to their practicality when modelling claim cost data (Resti, 2013). During testing it was found that including the year as an independent variable resulted in major increases to RMSE measures while only slightly reducing AIC and BIC levels, hence it was excluded. Further, injuries, fatalities and duration were already captured during severity categorization; hence they were not included in the model. Ultimately the dependent variables were the hazard category, quarter, region, and severity level. Of all the models, Gamma had the best AIC of 5573.195 and BIC of 5655.442 while maintaining the lowest RMSE of 49844863.149, hence it was chosen. The associated R code can be found in [SeverityModelling.R](https://github.com/Actuarial-Control-Cycle-Part-A-2023-T1/group-github-pages-erm-evidently-regretting-myprofession/blob/9890334a424a6c383255e519684dbe880b532ac9/SeverityModelling.R)
@@ -103,29 +100,37 @@ When projecting the economic costs of the catastrophic climate related events in
 ### __3.2.1 Without the Program__
 The three main economic costs without the program are the owner-occupied property damage, renter/owner equipment damage and the temporary housing costs that occur during disaster recovery efforts.
 
-$$ EconomicCost = {OwnerOccupiedPropertyDamage + Renter/OwnerEquipmentDamage + TempHousingCost} $$
+$$ EconomicCost = {OwnerOccupiedPropertyDamage + Renter/OwnerEquipmentDamage} $$
+
+$$ {+ TempHousingCost} $$
 
 #### __3.2.1.1 Owner-occupied Property Damage__
 Owner-occupied property damage is calculated per region by multiplying the total projected property damage from disasters by the owner-occupied house percentage which is assumed to be constant without the program. Further for minor severity events, a uniformly distributed value for a labour surge increase between 0-15% is produced. For medium severity events this surge is between 15-30% and for major severity events between 30-50%. This is as (Team, 2019) suggests that the severity and size of an event directly impacts the probability of a labour surge.
 
-$$ OwnerOccupiedPropertyDamage = TotalProjectedPropertyDamage * LabourSurgeIncrease * {OwnerOccupiedHouses\over NumberofHouses} $$
+$$ OwnerOccupiedPropertyDamage = TotalProjectedPropertyDamage * LabourSurgeIncrease $$
+
+$$ * {OwnerOccupiedHouses\over NumberofHouses} $$
 
 #### __3.2.1.2 Renter/Owner Equipment Damage__
 Renter/Owner Equipment Damage is calculated per region by generating a uniformly distributed value between 45-70% and multiplying this by total projected property damage from disasters. This value is then multiplied by the renter-and-owner-occupied housing percentage to account for its exposure to only renters and owners.
 
-$$ Renter/OwnerOccupiedEquipmentDamage = TotalProjectedPropertyDamage * {(OwnerOccupiedHouses+RenterOccupiedHouses)\over NumberofHouses} $$
+$$ Renter/OwnerOccupiedEquipmentDamage = TotalProjectedPropertyDamage  $$
 
-$$ {* EquipmentValueProportion} $$
+$$ {*{(OwnerOccupiedHouses+RenterOccupiedHouses)\over NumberofHouses} * EquipmentValueProportion} $$
 
 #### __3.2.1.3 Temporary Housing Costs__
 For temporary housing, the amount of affected houses is first calculated by dividing the total projected property damage in each region by its respective median house price. As it was assumed that if 25% of a house is destroyed on average, then temporary housing is required for its inhabitants, we multiply this figure by 4. We then multiply this by the average number of people per household, the average cost of temporary housing per month and by 3 months as we assume it takes approximately three months to recover.
 
-$$ TemporaryHousingCost = {TotalProjectedPropertyDamage\over MedianHousePrice} * 4 * AvgPeoplePerHousehold * AverageTempHousingCost * 3 $$
+$$ TemporaryHousingCost = {TotalProjectedPropertyDamage\over MedianHousePrice} * 4 * AvgPeoplePerHousehold $$
+
+$$  * AverageTempHousingCost * 3 $$
 
 ### __3.2.2 With the Program__
 The three main costs without the program are still present within the program, however the exposure to them is reduced through the buyback and rent subsidy scheme. The owner exposure factors are calculated as the change in the number of owner households from the base case year 2020. They can be found in [Migration Model.xslx](https://github.com/Actuarial-Control-Cycle-Part-A-2023-T1/group-github-pages-erm-evidently-regretting-myprofession/blob/ab9c99a7e679b6035c5924956b99b1cf755b3c69/Migration%20Model.xlsx) under the "OwnerExposure" sheet. Similarly, the renter/owner exposure factors are calculated as the change in the number of owner and renter households from the base case year 2020 and can be found under the [Migration Model.xslx](https://github.com/Actuarial-Control-Cycle-Part-A-2023-T1/group-github-pages-erm-evidently-regretting-myprofession/blob/ab9c99a7e679b6035c5924956b99b1cf755b3c69/Migration%20Model.xlsx) "Exposure Factors" sheet. These factors multiply the owner-occupied house percentages and owner and renter occupied house percentages respectively to reflect the change in exposure to these risks for individuals who move from a high-risk city to a low-risk city within a region. Additionally, costs are introduced for the buyback and rent subsidy schemes.
 
-$$ {EconomicCost_P} = {OwnerOccupiedPropertyDamage * OwnerExposureFactor + Renter/OwnerEquipmentDamage * Rent/OwnerExposureFactor} $$
+$$ {EconomicCost_P} = {OwnerOccupiedPropertyDamage * OwnerExposureFactor} $$
+
+$$  + Renter/OwnerEquipmentDamage * Rent/OwnerExposureFactor $$
 
 $${+ TemporaryHousingCosts + BuybackCost + RentSubsidyCost} $$
 
