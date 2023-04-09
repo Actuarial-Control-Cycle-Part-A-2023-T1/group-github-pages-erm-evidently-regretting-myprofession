@@ -5,7 +5,7 @@
 * TOC
 {:toc}
 
-# 1. __Executive Summary__
+# 1. __Executive Summary📝__
 ## Objectives 
 The objective of this report is to explore a proposed social insurance program for Storslysia that:
 *  Covers the entire population of Storslysia;
@@ -26,7 +26,7 @@ in a quarter. Global climate reports from (IPCC, 2023a) indicate that global war
 *   Conduct community consultation on the relocation program; and
 *   Monitor and support insurance companies to provide affordable premiums, which can reduce under-insurance and subsequently the need for government support and services in the event of a natural disaster.
 
-# __2. Program Design__
+# __2. Program Design 🧑‍🎨__
 
 ## 2.1 Claim Requirements
 To file a claim in relation to property damage from a climate-related catastrophe:
@@ -72,7 +72,7 @@ Key metrics expected to be reported to ensure the objectives of the program are 
 *  	Reporting on a _yearly basis_ over the long term to ensure the costs under the program are less than 10% of Storslysia’s GDP
 *  	Monitoring on a _yearly basis_ over the long term which Shared Socioeconomic Pathway (SSP) the world is trending towards.
 
-# __3. Modelling Procedure__
+# __3. Modelling Procedure 📊__
 ## 3.1 Overall Property Damage Cost
 To model and project the economic costs with and without the policy, the overall damage stemming from catastrophic climate related events must first be projected. This was achieved by first transforming the historical hazard data, calculating expected frequencies, projecting them utilising an SSP projection model, utilising a Compound Poisson model to model frequency and a Gamma GLM model to predict damage costs.
 
@@ -151,7 +151,7 @@ $$ RentSubsidyCost = {NumberOfRentOffers * MedianRentPrice * 0.3} $$
 
 The calculated costs can be found under the [Migration Model.xslx](https://github.com/Actuarial-Control-Cycle-Part-A-2023-T1/group-github-pages-erm-evidently-regretting-myprofession/blob/ab9c99a7e679b6035c5924956b99b1cf755b3c69/Migration%20Model.xlsx) "Rent Subsidy" sheet.
 
-# __4. Pricing and Costs__
+# __4. Pricing and Costs 💵__
 Assessing the pricing and economic costs associated with the scheme is integral to ensuring its success. To achieve this, Storslysias’ economics costs were modelled and projected from the years 2020-2150 for all quarters 1000 times. Refer to [1000sim.r](https://github.com/Actuarial-Control-Cycle-Part-A-2023-T1/group-github-pages-erm-evidently-regretting-myprofession/blob/657d83efa813cc427f38425929139fb83fd37d92/1000sim.R) for the R code generating the simulations. The averages of these costs were then taken and the following results were produced. Refer to [NoPolicyAverageCosts.csv](https://github.com/Actuarial-Control-Cycle-Part-A-2023-T1/group-github-pages-erm-evidently-regretting-myprofession/blob/a2b451223d5d465e60e5458a9afef0997923521f/No%20Policy%20Average%20Costs.csv) and [PolicyAverageCosts.csv](https://github.com/Actuarial-Control-Cycle-Part-A-2023-T1/group-github-pages-erm-evidently-regretting-myprofession/blob/a2b451223d5d465e60e5458a9afef0997923521f/Policy%20Average%20Costs.csv) to view the generated average costs with and without the policy after 1000 simulations.  All costs are in 2021 figures.
 
 
@@ -180,7 +180,7 @@ Clearly, voluntary costs are much higher in the short term due to the buyback an
 
 ![DisplacementCostComparison](https://raw.githubusercontent.com/Actuarial-Control-Cycle-Part-A-2023-T1/group-github-pages-erm-evidently-regretting-myprofession/9442ce1b9854f755e03fd8cf0584db69275d9377/DisplacementCostComparison.png)
 
-# __5. Assumptions__
+# __5. Assumptions 📢__
 ## 5.1 Key Assumptions 
   1.  Economic conditions are stable for 2021 onwards. This includes GDP, costs for temporary relocation and inflation in the labour, house and private rental markets. This is to avoid the uncertainty brought by performing economic forecasts and to reduce the complexity of models.
   2.	It is assumed that each region is split into city risk areas of: high, medium and low with areas being evenly distributed across the region based on the FEMA risk index map (hazards.fema.gov, n.d.). Refer to the following figure.
@@ -200,7 +200,7 @@ Clearly, voluntary costs are much higher in the short term due to the buyback an
 *  All buyback and rent offers that are extended to Storlysian residents are accepted
 
 
-# __6. Risk and Risk Mitigation Considerations__
+# __6. Risk and Risk Mitigation Considerations 📛__
 ![Risk Assessment Chart](https://user-images.githubusercontent.com/129591024/229504622-ee4688a0-3013-4579-a6e7-c919d0c57c4a.png)
 Refer to [Risk Register.pdf](https://github.com/Actuarial-Control-Cycle-Part-A-2023-T1/group-github-pages-erm-evidently-regretting-myprofession/files/11138147/Risk.Register.pdf) for comprehensive risk categorization.  
 ## 6.1 Key risks  
@@ -245,7 +245,7 @@ After running 1000 simulations, it has been identified that in the short term, t
 ## 6.3 Program GDP Constraint Certainty  
 After running 1000 simulations, program costs in all scenarios short and long term do not exceed the 10% GDP constraint 100% of the time. Associated code can be found in [Economic Certainty + GDP certainty.R](https://github.com/Actuarial-Control-Cycle-Part-A-2023-T1/group-github-pages-erm-evidently-regretting-myprofession/blob/b5167bcafe0515e6e2250ebabfbdd2942ae41d64/Economic%20Certainty%20+%20GDP%20certainty.R)
 
-# __7. Data and Data Limitations__
+# __7. Data and Data Limitations 🎚__
 ## 7.1 Truncation of Historical Data
 Historical events aren’t necessarily an accurate indicator of future events. As such, events prior to 1991 introduced instability in the frequency and severity models. We reason that technological advancements between 1991-2020 led to reduced fatalities, injuries and increased resistance and resilience to disasters. As such data prior to 1991 was truncated for the sake of analysis.  
 
@@ -259,7 +259,7 @@ Multiple hazard categorisations being assigned to the same event caused uncertai
 The supplied data only contained information pertaining to 6 regions in Storslysia and not granular data such as cities. As a result, it was assumed that each region consisted of 5% high-risk cities, 10% medium-risk cities and 85% low-risk cities as based on the US FEMA national risk index map (hazards.fema.gov, n.d.). Further, it was assumed that high-risk cities experience 90% of the major disasters, 85% of the medium disasters and 75% of the minor disasters, medium-risk cities experience 9.5% of the major disasters, 12.5% of the medium disasters and 20% of the minor disasters while the low-risk cities experience 0.5% of the major disasters, 2.5% of the medium disasters and 0.5% of the major disasters.  
 
 
-# __8. Bibliography__  
+# __8. Bibliography 📚__  
 Bureau, U.C. (n.d.). In 2020, 9.7% of Housing Was Vacant, Down From 11.4% in 2010. [online] Census.gov. Available at: https://www.census.gov/library/stories/2021/08/united-states-housing-vacancy-rate-declined-in-past-decade.html.
 
 Channels, N.G.D. (2022). Emergency financial support for people affected by floods. [online] NSW Government. Available at: https://www.nsw.gov.au/floods/financial-support/people.
