@@ -32,19 +32,19 @@ $$ EconomicCost = {OwnerOccupiedPropertyDamage + Renter/OwnerEquipmentDamage + T
 #### __2.1.1 Owner-occupied Property Damage__
 Owner-occupied property damage is calculated per region by multiplying the total projected property damage from disasters by the owner-occupied house percentage which is assumed to be constant without the program. Further for minor severity events, a uniformly distributed value for a labour surge increase between 0-15% is produced. For medium severity events this surge is between 15-30% and for major severity events between 30-50%. This is as (Team, 2019) suggests that the severity and size of an event directly impacts the probability of a labour surge.
 
-$$ OwnerOccupiedPropertyDamage = {TotalProjectedPropertyDamage * LabourSurgeIncrease * {OwnerOccupiedHouses\over NumberofHouses}} $$
+$$ OwnerOccupiedPropertyDamage = TotalProjectedPropertyDamage * LabourSurgeIncrease * {OwnerOccupiedHouses\over NumberofHouses} $$
 
 #### __2.1.2 Renter/Owner Equipment Damage__
 Renter/Owner Equipment Damage is calculated per region by generating a uniformly distributed value between 45-70% and multiplying this by total projected property damage from disasters. This value is then multiplied by the renter-and-owner-occupied housing percentage to account for its exposure to only renters and owners.
 
-$$ Renter/OwnerOccupiedEquipmentDamage = {TotalProjectedPropertyDamage * {(OwnerOccupiedHouses+RenterOccupiedHouses)\over NumberofHouses}} $$
+$$ Renter/OwnerOccupiedEquipmentDamage = TotalProjectedPropertyDamage * {(OwnerOccupiedHouses+RenterOccupiedHouses)\over NumberofHouses} $$
 
 $$ {* EquipmentValueProportion} $$
 
 #### __2.1.3 Temporary Housing Costs__
 For temporary housing, the amount of affected houses is first calculated by dividing the total projected property damage in each region by its respective median house price. As it was assumed that if 25% of a house is destroyed on average, then temporary housing is required for its inhabitants, we multiply this figure by 4. We then multiply this by the average number of people per household, the average cost of temporary housing per month and by 3 months as we assume it takes approximately three months to recover.
 
-$$ TemporaryHousingCost = {{TotalProjectedPropertyDamage\over MedianHousePrice} * 4 * AvgPeoplePerHousehold * AverageTempHousingCost * 3} $$
+$$ TemporaryHousingCost = {TotalProjectedPropertyDamage\over MedianHousePrice} * 4 * AvgPeoplePerHousehold * AverageTempHousingCost * 3 $$
 
 ### __2.2 With the Program__
 The three main costs without the program are still present within the program, however the exposure to them is reduced through the buyback and rent subsidy scheme. The owner exposure factors are calculated as the change in the number of owner households from the base case year 2020. Similarly, the renter/owner exposure factors are calculated as the change in the number of owner and renter households from the base case year 2020. These factors multiply the owner-occupied house percentages and owner and renter occupied house percentages respectively to reflect the change in exposure to these risks for individuals who move from a high-risk city to a low-risk city within a region. Additionally, costs are introduced for the buyback and rent subsidy schemes.
