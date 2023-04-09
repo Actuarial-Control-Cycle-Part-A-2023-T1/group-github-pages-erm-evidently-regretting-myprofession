@@ -2,6 +2,9 @@
 ![SOA cover image](https://user-images.githubusercontent.com/129591024/229493306-285e26b7-dcef-4211-9977-6217410a720c.jpg)
 ### By ERM Consulting
 
+# Table Of Contents
+{:toc}
+
 # 1. Executive Summary
 ## __Objectives__  
 The objective of this report is to explore a proposed social insurance program for Storslysia that:
