@@ -256,7 +256,7 @@ Bureau, U.C. (n.d.). In 2020, 9.7% of Housing Was Vacant, Down From 11.4% in 201
 
 Channels, N.G.D. (2022). Emergency financial support for people affected by floods. [online] NSW Government. Available at: https://www.nsw.gov.au/floods/financial-support/people.
 
-hazards.fema.gov. (n.d.). National Risk Index | FEMA.gov. [online] Available at: https://hazards.fema.gov/nri/.
+hazards.fema.gov. (n.d.). National Risk Index . FEMA.gov. [online] Available at: https://hazards.fema.gov/nri/.
 
 Insurance Council Australia (n.d.). Flood insurance explained. [online] Insurance Council of Australia. Available at: https://insurancecouncil.com.au/resource/flood-insurance-explained/.
 
