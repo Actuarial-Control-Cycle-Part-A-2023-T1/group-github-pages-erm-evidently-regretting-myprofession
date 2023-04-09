@@ -265,7 +265,7 @@ IPCC (2023a). Sixth Assessment Report Synthesis Report. [online] Available at: h
 IPCC (2023b). [online] Ipcc.ch. Available at: https://www.ipcc.ch/report/ar6/syr/downloads/figures/summary-for-policymakers/IPCC_AR6_SYR_SPM_Figure5.png
 [Accessed 23 Mar. 2023].
 
-Kwan, A. (2021). Demand surge and storm surge: the waves wiping out your supply chains | Swiss Re. [online] corporatesolutions.swissre.com. Available at: https://corporatesolutions.swissre.com/insights/knowledge/climate-change-supply-chains-risk-intersection.html 
+Kwan, A. (2021). Demand surge and storm surge: the waves wiping out your supply chains . Swiss Re. [online] corporatesolutions.swissre.com. Available at: https://corporatesolutions.swissre.com/insights/knowledge/climate-change-supply-chains-risk-intersection.html 
 [Accessed 28 Feb. 2023]. Risk Mitigation (reducing demand surge after CAT events).
 
 Macrotrends (2020). U.S. GDP 1947-2020. [online] Macrotrends.net. Available at: https://www.macrotrends.net/countries/USA/united-states/gdp-gross-domestic-product 
@@ -285,7 +285,7 @@ Paddam, S., Liu, C. and Philip, S. (2022). Home insurance affordability and soci
 
 PLANNED RELOCATION, DISASTERS AND CLIMATE CHANGE: CONSOLIDATING GOOD PRACTICES AND PREPARING FOR THE FUTURE REPORT DISASTERS CLIMATE CHANGE AND DISPLACEMENT EVIDENCE FOR ACTION NRC NORWEGIAN REFUGEE COUNCIL. (2014). Available at: https://www.unhcr.org/54082cc69.pdf.
 
-Psu.edu. (2011). What is a Natural Hazard? | GEOG 30N: Environment and Society in a Changing World. [online] Available at: https://www.e-education.psu.edu/geog30/node/378
+Psu.edu. (2011). What is a Natural Hazard? . GEOG 30N: Environment and Society in a Changing World. [online] Available at: https://www.e-education.psu.edu/geog30/node/378
 [Accessed 6 Mar. 2023].
 
 Resti (2013). ESTIMATION OF CLAIM COST DATA USING ZERO ADJUSTED GAMMA AND INVERSE GAUSSIAN REGRESSION MODELS. Journal of Mathematics and Statistics, [online] 9(3), pp.186–192. Available at: https://thescipub.com/pdf/jmssp.2013.186.192.pdf
@@ -297,7 +297,7 @@ Schuster, S., Palutikof, J., Boulter, S., Ash, A., Smith, S. and Parry, M. (2013
 Team, I. (2019). How Demand Surge After Natural Disasters Impacts the Cost and Timing of Recovery. [online] CoreLogic®. Available at: https://www.corelogic.com/intelligence/how-demand-surge-after-natural-disasters-impacts-the-cost-and-timing-of-recovery/ 
 [Accessed 28 Feb. 2023]. (Demand surge assumptions/parameters).
 
-UCAR (2019). How Tornadoes Form | UCAR Center for Science Education. [online] Ucar.edu. Available at: https://scied.ucar.edu/learning-zone/storms/how-tornadoes-form.
+UCAR (2019). How Tornadoes Form . UCAR Center for Science Education. [online] Ucar.edu. Available at: https://scied.ucar.edu/learning-zone/storms/how-tornadoes-form.
 
 www.fema.gov. (n.d.). National Flood Insurance Program Community Rating System . FEMA.gov. [online] Available at: https://www.fema.gov/floodplain-management/community-rating-system.
  
