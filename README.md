@@ -103,7 +103,7 @@ When projecting the economic costs of the catastrophic climate related events in
 ### __3.2.1 Without the Program__
 The three main economic costs without the program are the owner-occupied property damage, renter/owner equipment damage and the temporary housing costs that occur during disaster recovery efforts.
 
-$$ EconomicCost = {OwnerOccupiedPropertyDamage + Renter/OwnerEquipmentDamage + TempHousingCost} $$
+$${% EconomicCost = {OwnerOccupiedPropertyDamage + Renter/OwnerEquipmentDamage + TempHousingCost} %}$$
 
 #### __3.2.1.1 Owner-occupied Property Damage__
 Owner-occupied property damage is calculated per region by multiplying the total projected property damage from disasters by the owner-occupied house percentage which is assumed to be constant without the program. Further for minor severity events, a uniformly distributed value for a labour surge increase between 0-15% is produced. For medium severity events this surge is between 15-30% and for major severity events between 30-50%. This is as (Team, 2019) suggests that the severity and size of an event directly impacts the probability of a labour surge.
