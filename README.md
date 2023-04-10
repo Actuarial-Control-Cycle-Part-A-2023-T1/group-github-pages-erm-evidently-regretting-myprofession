@@ -1,7 +1,7 @@
 # __Storslysia Relocation Social Insurance Proposal__
 ![SOA cover image](https://user-images.githubusercontent.com/129591024/229493306-285e26b7-dcef-4211-9977-6217410a720c.jpg)
 ### By ERM Consulting
-
+Find the main report [here](https://github.com/Actuarial-Control-Cycle-Part-A-2023-T1/group-github-pages-erm-evidently-regretting-myprofession/blob/19e80c558a285ab9772ab86d2e7f1f969a33cf9e/ERM_UNSW_Consultancy_Report_2023.pdf)
 * TOC
 {:toc}
 
