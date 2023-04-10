@@ -6,14 +6,14 @@ Find the main report [here](https://github.com/Actuarial-Control-Cycle-Part-A-20
 {:toc}
 
 # 1. __Executive Summary📝__
-## Objectives 
+## 1.1 Objectives 
 The objective of this report is to explore a proposed social insurance program for Storslysia that:
 *  Covers the entire population of Storslysia;
 *  Covers both voluntary (proactive) and involuntary displacement arising from catastrophic climate-related events;
 *  Reduces costs from catastrophic climate-related events with a high degree of certainty; and
 *  Prevents costs arising from voluntary and involuntary displacement exceeding 10% of Storslysia’s GDP with a high degree of certainty.
 
-## Recommendations
+## 1.2 Recommendations
 Climate change is a material emerging risk; one where the impact on everyday life is becoming apparent. The social insurance program defined in this report aims to provide a realistic approach to tackling the catastrophe risk that ensues. Modelling indicates that the maximum average cost of natural perils under SSP climate scenarios can total up to 7,937,354,707,611Ꝕ
 in a quarter. Global climate reports from (IPCC, 2023a) indicate that global warming impacts are trending closer to high and very high scenarios, hence the impact of such a cost is very real and imminent. In this context, the following recommendations are made:
 *  Attempt to plan and implement the program to some extent;
